@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="loginForm" method="POST">
+      <input name="login" type="text" />
+      <input name="password" type="password" />
+      <button>byton</button>
+    </form>
+    <script>
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const data = {};
+        const inputs = form.querySelectorAll("input");
+        inputs.forEach((input) => (data[input.name] = input.value));
+
+        fetch("http://localhost:3000", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            const div = document.createElement("div");
+            div.innerHTML = data;
+            document.body.appendChild(div);
+          })
+          .catch((error) => console.log(error));
+      });
+    </script>
+  </body>
+</html>
