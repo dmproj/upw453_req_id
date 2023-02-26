@@ -1,0 +1,24 @@
+{
+  "name": "trash_to_gh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmproj/upw453_req_id.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmproj/upw453_req_id/issues"
+  },
+  "homepage": "https://github.com/dmproj/upw453_req_id#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.2"
+  }
+}

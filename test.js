@@ -1,9 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieSession = require('cookie-session')
 const app = express();
 
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieSession({
+  keys: ['abcd']
+}))
 
 app.use((req, res, next) => {
   res.header("access-control-allow-origin", "*");
