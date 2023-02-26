@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.header("access-control-allow-origin", "*");
-  res.header("access-control-allow-methods", "GET, POST");
+  res.header("access-control-allow-methods", "GET, POST, DELETE");
   res.header("access-control-allow-headers", "Content-Type");
   next();
 });
@@ -17,6 +17,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("Received POST request!");
+});
+
+app.delete("/", (req, res) => {
   console.log(req.body);
   res.send("Received POST request!");
 });
